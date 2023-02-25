@@ -1,26 +1,10 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-void render(sf::RenderWindow &window) {
-    window.clear();
-}
+#include "EmulatorWindow.h"
 
 int main() {
-    sf::Window window(sf::VideoMode(800, 600), "Platformer");
-    window.setVerticalSyncEnabled(true);
-
-    while (window.isOpen()) {
-        render(window);
-
-        sf::Event event;
-
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-        }
-    }
+    EmulatorWindow emulatorWindow{sf::VideoMode(800, 600)};
+    emulatorWindow.game_loop();
 
     return 0;
 }
