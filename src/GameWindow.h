@@ -17,7 +17,7 @@ public:
 
     void game_loop();
 
-    void update();
+    void update(float deltaTime);
 
     void render() const;
 };
