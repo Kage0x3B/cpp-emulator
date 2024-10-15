@@ -1,8 +1,8 @@
-#include "GameWindow.h"
+#include "EmulatorWindow.h"
 
-const std::string GameWindow::WINDOW_TITLE = "Platformer";
+const std::string EmulatorWindow::WINDOW_TITLE = "SharpSm83 Emulator";
 
-void GameWindow::game_loop() {
+void EmulatorWindow::game_loop() {
     auto clock = sf::Clock{};
 
     while (window.isOpen()) {
@@ -20,4 +20,16 @@ void GameWindow::game_loop() {
             }
         }
     }
+}
+
+void EmulatorWindow::update(float deltaTime) {
+
+}
+
+void EmulatorWindow::render() {
+    window.clear(sf::Color::Black);
+
+    window.draw()
+
+    window.display();
 }

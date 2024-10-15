@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(cpp_platformer)
+project(cpp_chip8_emulator)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -9,6 +9,7 @@ include(FetchContent)
 FetchContent_Declare(
         sfml
         URL https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
+        DOWNLOAD_EXTRACT_TIMESTAMP true
 )
 FetchContent_GetProperties(sfml)
 if (NOT sfml_POPULATED)
@@ -18,7 +19,8 @@ if (NOT sfml_POPULATED)
 endif ()
 
 
-add_executable(cpp-platformer src/main.cpp src/screen/Screen.h src/screen/GameScreen.cpp src/screen/GameScreen.h src/GameWindow.cpp src/GameWindow.h)
+add_executable(cpp-platformer src/main.cpp src/EmulatorWindow.cpp src/EmulatorWindow.h src/sharpSm83/SharpSm83.cpp src/sharpSm83/SharpSm83.h src/sharpSm83/GameBoyScreen.cpp src/sharpSm83/GameBoyScreen.h)
+
 target_compile_features(cpp-platformer PRIVATE cxx_std_20)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT cpp-platformer)
 

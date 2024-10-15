@@ -4,14 +4,14 @@
 #include <SFML/Graphics.hpp>
 
 
-class GameWindow {
+class EmulatorWindow {
 private:
     static const std::string WINDOW_TITLE;
 
-    sf::Window window;
+    sf::RenderWindow window;
     sf::RenderTexture render_target;
 public:
-    GameWindow(sf::VideoMode videoMode) : window{videoMode, WINDOW_TITLE} {
+    EmulatorWindow(sf::VideoMode videoMode) : window{videoMode, WINDOW_TITLE} {
         window.setVerticalSyncEnabled(true);
     }
 
@@ -19,5 +19,5 @@ public:
 
     void update(float deltaTime);
 
-    void render() const;
+    void render();
 };
